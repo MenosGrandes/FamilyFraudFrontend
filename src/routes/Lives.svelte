@@ -17,6 +17,6 @@
 		text-align: center;
 		font-size: 200%;
 		text-transform: lowercase;
-		width: 10%;
+		min-width: 10%;
 	}
 </style>

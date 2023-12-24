@@ -1,9 +1,10 @@
 <script>
-export let points;
+  import { visiblePoints } from "../stores/answers";
+
 </script>
 
 <div>
-	<div class="sum_of_points">SUM {points}</div>
+	<div class="sum_of_points">{$visiblePoints}</div>
 </div>
 
 <style>
