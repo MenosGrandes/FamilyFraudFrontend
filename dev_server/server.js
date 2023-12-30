@@ -25,6 +25,7 @@ const generateQuestions = (numberOfElems) => {
 
 const sockserver = new WebSocketServer({ port: 443 });
 sockserver.on("connection", (ws) => {
+  console.log("New Connection");
   ws.send(
     JSON.stringify(generateQuestions(faker.number.int({ max: 5, min: 2 }))),
   );

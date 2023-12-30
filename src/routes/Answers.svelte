@@ -8,12 +8,7 @@
   {#if $answers}
     <div >
       {#each $answers as answer, index (answer.id)}
-        <Answer
-          isVisible={answer.isVisible}
-          answer={answer.answer}
-          {index}
-          points={answer.points}
-        />
+        <Answer bind:answer={answer} {index}/>
       {/each}
     </div>
     <SumOfPoints />
