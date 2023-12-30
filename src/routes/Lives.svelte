@@ -14,9 +14,12 @@
 		display: flex;
 		flex-flow: column;
 		justify-content: space-around;
-		text-align: center;
-		font-size: 200%;
+		font-size: 5em;
 		text-transform: lowercase;
-		min-width: 10%;
+		padding: 0px;
+		margin: 0px;
+
+	padding-left:20px;
+	padding-right:20px;
 	}
 </style>

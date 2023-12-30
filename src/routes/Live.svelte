@@ -31,11 +31,12 @@
 	.live-container {
 		display: flex;
 		flex-flow: column;
-		justify-content: space-evenly;
+		justify-content: center;
 		text-align: center;
 		text-transform: lowercase;
 		row-gap: 5px;
 		flex-basis: auto;
+		align-items: start;
 	}
 	.non_visible
 	{

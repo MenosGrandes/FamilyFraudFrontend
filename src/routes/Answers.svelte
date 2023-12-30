@@ -4,9 +4,9 @@
   import SumOfPoints from "./SumOfPoints.svelte";
 </script>
 
-<div>
+<div class="answers_container">
   {#if $answers}
-    <div class="answers_container">
+    <div >
       {#each $answers as answer, index (answer.id)}
         <Answer
           isVisible={answer.isVisible}
@@ -23,6 +23,7 @@
 <style>
   .answers_container {
     display: flex;
+    flex: 4 1 0;
     flex-flow: column;
     justify-content: space-around;
     background-color: black;

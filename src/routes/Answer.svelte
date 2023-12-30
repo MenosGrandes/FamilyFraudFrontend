@@ -19,11 +19,11 @@
 		padding: 5px;
 		margin-top: 10px;
 		font-weight: bold;
-		font-size: 1em;
+		font-size: 3em;
 		text-align: left;
 		flex-direction: row wrap;
 		overflow: hidden;
-		height: 1em;
+		height: 2em;
 	}
 	.number {
 		display: flex;

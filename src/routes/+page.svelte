@@ -40,7 +40,6 @@
     color: yellow;
     position: absolute;
     text-transform: uppercase;
-    overflow: hidden;
     white-space: nowrap;
   }
 </style>
