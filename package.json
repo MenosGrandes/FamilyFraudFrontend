@@ -1,35 +1,38 @@
 {
-	"name": "family-fraud-front",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"test": "npm run test:integration && npm run test:unit",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"test:integration": "playwright test",
-		"test:unit": "vitest"
-	},
-	"devDependencies": {
-		"@faker-js/faker": "^8.3.1",
-		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.27.4",
-		"eslint": "^8.28.0",
-		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-svelte": "^2.30.0",
-		"prettier": "^3.0.0",
-		"prettier-plugin-svelte": "^3.0.0",
-		"svelte": "^4.2.7",
-		"vite": "^4.4.2",
-		"vitest": "^0.32.2"
-	},
-	"type": "module",
-	"dependencies": {
-		"express": "^4.18.2",
-		"nanoid": "^5.0.4",
-		"ws": "^8.15.1"
-	}
+  "name": "family-fraud-front",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "npm run test:integration && npm run test:unit",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "test:integration": "playwright test",
+    "test:unit": "vitest",
+    "build_pb": "npx pbjs --dependency protobufjs/minimal.js -t static-module -w proto/wrapper.js -o proto/pb.js proto/msg.proto && npx pbts -o proto/pb.d.ts proto/pb.js"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "@playwright/test": "^1.28.1",
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.27.4",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-svelte": "^2.30.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "svelte": "^4.2.7",
+    "vite": "^4.4.2",
+    "vitest": "^0.32.2"
+  },
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nanoid": "^5.0.4",
+    "protobufjs": "^7.2.5",
+    "protobufjs-cli": "^1.1.2",
+    "ws": "^8.15.1"
+  }
 }

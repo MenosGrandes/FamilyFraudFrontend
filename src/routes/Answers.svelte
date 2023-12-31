@@ -6,9 +6,14 @@
 
 <div class="answers_container">
   {#if $answers}
-    <div >
+    <div>
       {#each $answers as answer, index (answer.id)}
-        <Answer bind:answer={answer} {index}/>
+        <Answer
+          isVisible={answer.isVisible}
+          answer={answer.answer}
+          {index}
+          points={answer.points}
+        />
       {/each}
     </div>
     <SumOfPoints />
