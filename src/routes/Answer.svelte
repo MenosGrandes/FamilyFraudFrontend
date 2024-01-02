@@ -3,13 +3,11 @@
   export let answer;
   export let index;
   export let points;
-  let className = isVisible ? "answer" : "non_visible answer";
-  export { className as class };
 </script>
 
 <div class="row">
   <div class="number">{index + 1}</div>
-  <div class={className}>{isVisible ? answer : ""}</div>
+  <div class={isVisible ? "answer" : "non_visible answer"}>{isVisible ? answer : ""}</div>
   <div class="points">{isVisible ? points : "=="}</div>
 </div>
 

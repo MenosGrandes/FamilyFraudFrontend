@@ -1,22 +1,32 @@
 export class TOPIC {
-  static SHOW_ANSWER = 1;
-  static GET_NEW_ANSWERS = 2;
-  static NEW_ANSWERS = 3;
+  static SIZE = 0;
+  static SHOW_ANSWER = this.SIZE++;
+  static GET_NEW_ANSWERS = this.SIZE++;
+  static NEW_ANSWERS = this.SIZE++;
+  static LIFE_LOST = this.SIZE++;
 }
 
 export class Messages {
+  static showAnswer(index) {
+    return { topic: TOPIC.SHOW_ANSWER, index: index };
+  }
+  /*From client to server*/
   static getNewAnswers(amount_of_answers) {
     return {
       topic: TOPIC.GET_NEW_ANSWERS,
       amount_of_answers: amount_of_answers,
     };
   }
+  static lifeLost() {
+    return { topic: TOPIC.LIFE_LOST };
+  }
+  /*From server to client*/
   static newAnswers(data) {
     return {
       topic: TOPIC.NEW_ANSWERS,
-      question : data.question,
-      multiplier : 1, // MenosGrandes TEMP
-      answers : data.answers
+      question: data.question,
+      multiplier: 1, // MenosGrandes TEMP
+      answers: data.answers,
       /*
 
       answer: faker.person.fullName(),
@@ -26,9 +36,5 @@ export class Messages {
 
       */
     };
-  }
-
-  static showAnswer(index) {
-    return { topic: TOPIC.SHOW_ANSWER, index: index };
   }
 }

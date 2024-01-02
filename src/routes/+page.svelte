@@ -18,6 +18,7 @@
   <Lives />
   {#if _webSockerHandler}
   <button on:click={_webSockerHandler.show()}>REVEAL</button>
+  <button on:click={_webSockerHandler.request_new()}>NEW ANSWERS</button>
   {/if}
 </div>
 
