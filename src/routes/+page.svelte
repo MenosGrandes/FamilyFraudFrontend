@@ -6,7 +6,7 @@
     WebSocketCommunicationHandler,
   } from "$lib/db_handler.js";
 
-  let _webSockerHandler;
+  var _webSockerHandler = undefined;
   onMount(async () => {
     _webSockerHandler = new WebSocketCommunicationHandler();
   });
@@ -16,10 +16,6 @@
   <Lives />
   <Answers />
   <Lives />
-  {#if _webSockerHandler}
-  <button on:click={_webSockerHandler.show()}>REVEAL</button>
-  <button on:click={_webSockerHandler.request_new()}>NEW ANSWERS</button>
-  {/if}
 </div>
 
 <style>

@@ -63,6 +63,7 @@ class MessageHandler {
     console.log(this.handler);
   }
   onMessageHandle(msg) {
+    console.log(msg);
     console.log("HANDLING " + msg.topic);
     return this.messageWrapper(this.handler[msg.topic](msg));
   }
