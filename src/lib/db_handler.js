@@ -2,9 +2,12 @@ import { answers } from "$lib/../stores/answers.js";
 import { faker } from "@faker-js/faker";
 import { TOPIC, Messages } from "$lib/../common/common_lib.js"; //MenosGrandes add this file into config..
 import { get, readable, writable } from "svelte/store";
+import { APP_TYPE } from "../common/common_lib";
+import { nanoid } from "nanoid";
 
 export class WebSocketCommunicationHandler {
   _send(msgCallback) {
+    msgCallback["id"] = this.app_id;
     this.webSocket.send(JSON.stringify(msgCallback));
   }
   _handleMessage(msg) {
@@ -29,7 +32,11 @@ export class WebSocketCommunicationHandler {
       this._handleMessage(event);
     };
     this.webSocket.onopen = () => {
-      this._send(Messages.getNewAnswers(5));
+      if (!this.app_id) {
+        this.app_id = nanoid();
+        console.log(this.app_id + "generated ID");
+      }
+      this._send(Messages.setId(APP_TYPE.USER));
     };
   }
   /*MenosGrandes this suppose to be send from the ADMINISTATOR APP, the one that is not visible for clients*/

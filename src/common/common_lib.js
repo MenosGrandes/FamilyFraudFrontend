@@ -1,11 +1,19 @@
+import { nanoid } from "nanoid";
+
 export class TOPIC {
   static SIZE = 0;
   static SHOW_ANSWER = this.SIZE++;
   static GET_NEW_ANSWERS = this.SIZE++;
   static NEW_ANSWERS = this.SIZE++;
   static LIFE_LOST = this.SIZE++;
+  static SET_ID = this.SIZE++;
 }
 
+export class APP_TYPE {
+  static SIZE = 0;
+  static USER = this.SIZE++;
+  static ADMIN = this.SIZE++;
+}
 export class Messages {
   static showAnswer(index) {
     return { topic: TOPIC.SHOW_ANSWER, index: index };
@@ -19,6 +27,9 @@ export class Messages {
   }
   static lifeLost() {
     return { topic: TOPIC.LIFE_LOST };
+  }
+  static setId(type) {
+    return { topic: TOPIC.SET_ID, type: type };
   }
   /*From server to client*/
   static newAnswers(data) {

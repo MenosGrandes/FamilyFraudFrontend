@@ -6,9 +6,8 @@
     WebSocketCommunicationHandler,
   } from "$lib/db_handler.js";
 
-  var _webSockerHandler = undefined;
   onMount(async () => {
-    _webSockerHandler = new WebSocketCommunicationHandler();
+    const _webSockerHandler = new WebSocketCommunicationHandler();
   });
 </script>
 
