@@ -26,7 +26,7 @@ export class WebSocketCommunicationHandler {
     }
   }
   constructor() {
-    this.webSocket = new WebSocket("ws://localhost:443/");
+    this.webSocket = new WebSocket("ws://localhost:9001/");
 
     this.webSocket.onmessage = (event) => {
       this._handleMessage(event);
